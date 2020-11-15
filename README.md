@@ -66,3 +66,5 @@ The first thing shown will be how a user would register a user account. To do th
 * 3 security question answers 
 
 The following shows this exact process.
+
+![](pics/login.gif)
