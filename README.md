@@ -102,3 +102,7 @@ Now that the smart watch has been verified, when the user logs into the applicat
 * 3 security questions (chosen during registration)
 
 ![](pics/post_login(dv).gif)
+
+Once the verification of the device expires, user's will be met with the information they saw before. In order to view their email address and security questions again they must verify their device again.
+
+
