@@ -68,3 +68,24 @@ The first thing shown will be how a user would register a user account. To do th
 The following shows this exact process.
 
 ![](pics/registration.gif)
+
+Once a user is registered, they must authorize themselves to be granted a JWT token. This token is used in the authorization header to gain access to the other endpoints in the API. For a user to login the must send a POST request to the `/api/user/authenticate` endpoint with their name and password in a JSON body. If the credentials match what's in the database, the user is granted their token.
+
+![](pics/login.gif)
+
+Now, for the sake of demonstration purposes, let's say a user was to login to their account to view some of their personal informaiton. They would only be able to view limited information on their account because they have not added a smart watch to their account. They will only be able to view their:
+* Name
+* Public ID (UUID generated at time of registration)
+* And a True of False value, determining whether they have a smart watch connected to their account or not
+
+The application will also instruct the user to add a smart device to their account if they would like to view all of their personal information.
+
+![](pics/post_login(nd).gif)
+
+Once the user has their token, they can place it into the authorization header in order to make requsts to other endpoints. For example, when a user wants to add a smart watch to their account, they place their JWT token into the authorization header and send a POST request to the `/api/user/add_device` endpoint with the name of the device they would like to add as the body of the request.
+
+![](pics/add_device.gif)
+
+Now, if a user was to login to view their account information they would see the same information they saw before. The only difference would be is the `Using IOT` value will have been updated from `False` to `True`. The message the application displays to the user will be slightly different too. It will now instruct the user to verify their smart device in order to access all of their personal information.
+
+![](pics/post_login(d).gif)
