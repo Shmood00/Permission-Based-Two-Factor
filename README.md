@@ -67,4 +67,4 @@ The first thing shown will be how a user would register a user account. To do th
 
 The following shows this exact process.
 
-![](pics/login.gif)
+![](pics/registration.gif)
