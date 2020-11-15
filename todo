@@ -1,6 +1,0 @@
-- [ ]  Add device responds with csrf token value
-- [ ]  Change request iot API to check public id and csrf token responding with new one
-- [*]  register api needs to work with json post
-- [*]  make forgot password stuff all take in and respond with API shit
-- [*]  make a mock application with 3 permission levels, unauth, false iot and true iot
-- [*]  Add verification endpoint for users to verify their devices when they're registered
