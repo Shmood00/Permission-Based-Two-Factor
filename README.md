@@ -89,3 +89,7 @@ Once the user has their token, they can place it into the authorization header i
 Now, if a user was to login to view their account information they would see the same information they saw before. The only difference would be is the `Using IOT` value will have been updated from `False` to `True`. The message the application displays to the user will be slightly different too. It will now instruct the user to verify their smart device in order to access all of their personal information.
 
 ![](pics/post_login(d).gif)
+
+Now, here's the process that would take place on the smart phone applciation and the smart watch in order verify the smart watch.
+
+![](pics/phone-verify-device.gif)
