@@ -76,13 +76,13 @@ Once a user is registered, they must authorize themselves to be granted a JWT to
 Now, for the sake of demonstration purposes, let's say a user was to login to their account to view some of their personal informaiton. They would only be able to view limited information on their account because they have not added a smart watch to their account. They will only be able to view their:
 * Name
 * Public ID (UUID generated at time of registration)
-* And a True of False value, determining whether they have a smart watch connected to their account or not
+* A True of False value, determining whether they have a smart watch connected to their account or not
 
 The application will also instruct the user to add a smart device to their account if they would like to view all of their personal information.
 
 ![](pics/post_login(nd).gif)
 
-Once the user has their token, they can place it into the authorization header in order to make requsts to other endpoints. For example, when a user wants to add a smart watch to their account, they place their JWT token into the authorization header and send a POST request to the `/api/user/add_device` endpoint with the name of the device they would like to add as the body of the request.
+Once the user has their token, they can place it into the authorization header in order to make requsts to other endpoints. For example, when a user wants to add a smart watch to their account, they place their JWT token into the authorization header and send a POST request to the `/api/user/add_device` endpoint with the name of the device they would like to add as the body of the request. NOTE: This process would normally take place on the smart phone application (as demonstrated while showing the smart watch verification process).
 
 ![](pics/add_device.gif)
 
@@ -93,3 +93,12 @@ Now, if a user was to login to view their account information they would see the
 Now, here's the process that would take place on the smart phone applciation and the smart watch in order verify the smart watch.
 
 ![](pics/phone-verify-device.gif)
+
+Now that the smart watch has been verified, when the user logs into the application, they will be able to view all of their personal information for 30 minutes. This information includes:
+* Name
+* Public ID
+* Email
+* A True of False value, determining whether they have a smart watch connected to their account or not
+* 3 security questions (chosen during registration)
+
+![](pics/post_login(dv).gif)
