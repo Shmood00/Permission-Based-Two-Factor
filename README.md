@@ -105,4 +105,4 @@ Now that the smart watch has been verified, when the user logs into the applicat
 
 Once the verification of the device expires, user's will be met with the information they saw before. In order to view their email address and security questions again they must verify their device again.
 
-
+In order to handle the device verification resetting, we made use of MySQL events and procedures. We created an event that executes the stored procedure every minute. This procedure compares the current time with the time in the `verified_date` column in the device table. If this time is greater than 30 minutes, the `is_verified` column gets reset to a value of `false` and the `verified_date` column is reset to a value of `null`.
