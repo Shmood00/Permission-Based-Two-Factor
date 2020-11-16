@@ -51,12 +51,12 @@ As can be observed, a laptop and the phone application would communicated with t
 
 Once the UUID value is stored on the smart watch, the smart watch sends an HTTP POST to the Golang API. This POST request contains the UUID of the device that is being verified. This verification endpoint uses the users JWT token (that contains the user public id) to query the device connected to the users account and then compares the device public id in the database with the public id that's stored on the smart watch to ensure the request is coming from the correct device.
 
-Once the smart watch is successfully verified, it will remained verified for 30 minutes. During the time in which the device is verified, a user is able to login to their account and view all of their personal informaiton. Once the verification has timed outthe users scope is reduced, and they are only able to view limited information when loggin into their account.
+Once the smart watch is successfully verified, it will remained verified for 30 minutes. During the time in which the device is verified, a user is able to login to their account and view all of their personal information. Once the verification has timed out, the users scope is reduced, and they are only able to view limited information when loggin into their account.
 
 # Proof of Concept
 The following will be a series of screenshots in order to demonstrate what was described is successfully working.
 
-The first thing shown will be how a user would register a user account. To do this, they would send a POST request to the `/api/user/register` endpoint. This POST request must be sent with a JSON payload contianing a user's:
+The first thing shown will be how a user would register a user account. To do this, they would send a POST request to the `/api/user/register` endpoint. This POST request must be sent with a JSON payload containing a user's:
 * Name
 * Email
 * Confirmation email
@@ -69,7 +69,7 @@ The following shows this exact process.
 
 ![](pics/registration.gif)
 
-Once a user is registered, they must authorize themselves to be granted a JWT token. This token is used in the authorization header to gain access to the other endpoints in the API. For a user to login the must send a POST request to the `/api/user/authenticate` endpoint with their name and password in a JSON body. If the credentials match what's in the database, the user is granted their token.
+Once a user is registered, they must authorize themselves to be granted a JWT token. This token is used in the authorization header to gain access to the other endpoints in the API. For a user to login, they must send a POST request to the `/api/user/authenticate` endpoint with their name and password in a JSON body. If the credentials match what's in the database, the user is granted their token.
 
 ![](pics/login.gif)
 
@@ -82,7 +82,7 @@ The application will also instruct the user to add a smart device to their accou
 
 ![](pics/post_login(nd).gif)
 
-Once the user has their token, they can place it into the authorization header in order to make requsts to other endpoints. For example, when a user wants to add a smart watch to their account, they place their JWT token into the authorization header and send a POST request to the `/api/user/add_device` endpoint with the name of the device they would like to add as the body of the request. NOTE: This process would normally take place on the smart phone application (as demonstrated while showing the smart watch verification process).
+Once the user has their token, they can place it into the authorization header in order to make requests to other endpoints. For example, when a user wants to add a smart watch to their account, they place their JWT token into the authorization header and send a POST request to the `/api/user/add_device` endpoint with the name of the device they would like to add as the body of the request. NOTE: This process would normally take place on the smart phone application (as demonstrated while showing the smart watch verification process).
 
 ![](pics/add_device.gif)
 
@@ -90,7 +90,7 @@ Now, if a user was to login to view their account information they would see the
 
 ![](pics/post_login(d).gif)
 
-Now, here's the process that would take place on the smart phone applciation and the smart watch in order verify the smart watch.
+Now, here's the process that would take place on the smart phone application and the smart watch in order verify the smart watch.
 
 ![](pics/phone-verify-device.gif)
 
