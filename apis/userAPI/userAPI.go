@@ -793,6 +793,7 @@ func WebLogin(w http.ResponseWriter, r *http.Request) {
 						Name:    "jwt_token",
 						Value:   tokenString,
 						Expires: time.Now().Add(time.Minute * 30),
+						HttpOnly: true,
 						SameSite: http.SameSiteLaxMode,
 					}
 
